@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block page %}
+    <header class="index--header">
+        <a class="logo index--header__logo" href="{{ SITEURL }}/"></a>
+        <div class="intro">
+            <div class="intro__title">{{ SITENAME|upper }}</div>
+            <div class="intro__author">BY {{ AUTHOR|upper }}</div>
+            <p class="intro__description">{{ SITESUBTITLE }}</p>
+        </div>
+    </header>
+
+    <main class="index--main">
+        {% if articles %}
+            <ul>
+                {% for article in articles_page.object_list %}
+                    <li class="index--article index--main__index--article">
+                        <div class="index--article__info">
+                            {{ article.locale_date }} |
+                            {% if article.tags %}
+                                {% for tag in article.tags %}
+                                    <a class="index--article__tag" href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{% if not loop.last %} | {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+
+                        <div class="index--article__title">
+                            <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title|replace('_', ' ')|title }}</a>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </main>
+
+    <footer class="footer">
+        <div class="credit footer__credit">
+            Built with
+            <a href="https://github.com/kinoubenkyou/kelican-quiet">
+                kelican-quiet
+            </a>
+            and lots of Java Chip.
+        </div>
+    </footer>
+{% endblock page %}

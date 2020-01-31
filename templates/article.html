@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}{{ article.title|replace('_', ' ')|title }}{% endblock %}
+{% block page %}
+    <header class="article--header">
+        <a class="logo article--header__logo" href="{{ SITEURL }}/"></a>
+    </header>
+
+    <main class="article--main">
+        <article class="article--article">
+            <div class="article--article__title">
+                {{ article.title|replace('_', ' ')|title }}
+            </div>
+
+            <div class="article--article__content">
+                {{ article.content }}
+            </div>
+
+            <div class="article--article__info">
+                {{ article.locale_date }} |
+                {% if article.tags %}
+                    {% for tag in article.tags %}
+                        <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{% if not loop.last %} | {% endif %}
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </article>
+    </main>
+{% endblock %}

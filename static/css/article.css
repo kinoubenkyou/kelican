@@ -1,0 +1,75 @@
+.article--article__content .highlight {
+  background-color: #2c2c2c;
+  padding: 0.75rem 1rem;
+}
+
+.article--article__content h1 {
+  font-size: 1.25rem;
+  margin: 2rem 0;
+}
+
+.article--article__content ol {
+  list-style-type: decimal;
+  margin: 2rem 1rem;
+  padding-left: 1rem;
+}
+
+.article--article__content p {
+  margin: 2rem 0;
+  text-align: justify;
+}
+
+.article--article__content ul {
+  list-style-type: disc;
+  margin: 2rem 1rem;
+  padding-left: 1rem;
+}
+
+.article--article__info {
+  color: #606060;
+  font-size: 0.75rem;
+  margin-top: 3rem;
+}
+
+.article--article__title {
+  color: #78bf30;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+.article--article__title:before {
+  color: #78bf30;
+  content: "> ";
+}
+
+.article--header {
+  padding: 4rem 2rem 8rem;
+}
+
+.article--header__logo {
+  margin: auto;
+}
+
+.article--main {
+  padding: 0 2rem 4rem;
+}
+
+/* tablet */
+
+@media screen and (min-width: 768px) {
+  .article--header {
+    padding-top: 2rem;
+    position: fixed;
+  }
+
+  .article--main {
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 768px;
+    padding-left: 8rem;
+    padding-right: 8rem;
+    padding-top: 9rem;
+  }
+}
